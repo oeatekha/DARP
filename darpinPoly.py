@@ -174,6 +174,7 @@ if __name__ == '__main__':
     if args.nep:
         for portion in args.portions:
             portions.append(portion)
+        
     else:
         for drone in range(len(initial_positions)):
             portions.append(1/len(initial_positions))
@@ -204,5 +205,9 @@ if __name__ == '__main__':
     print("Robot Number:", len(initial_positions))
     print("Initial Robots' positions", initial_positions)
     print("Portions for each Robot:", portions, "\n")
+    print("args")
+    print(initial_positions)
+    print(args.nep)
+    print(args.vis)
 
     poly = DARPinPoly(rows, cols, MaxIter, CCvariation, randomLevel, dcells, importance, args.nep, initial_positions, portions, obstacles_positions, args.vis)
